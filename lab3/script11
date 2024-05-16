@@ -1,0 +1,22 @@
+#!/bin/bash
+#Возможность использования опций и параметров одномременно.
+
+while [ -n "$1" ]
+do
+	case "$1" in
+		-a) echo "Найдена опция -a";;	
+		-b) echo "Найдена опция -b";;
+		-c) echo "Найдена опция -c";;
+		--) shift
+		break ;;
+		*) echo "$1 не является опцией";;
+	esac
+	shift
+done
+
+count=1
+for param in $@
+do
+	echo "Параметр #$count: $param"
+	count=$(( $count + 1 ))
+done

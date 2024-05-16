@@ -1,0 +1,14 @@
+#!/bin/bash
+#Добавляем special options в наш скрипт.
+
+echo
+while [ -n "$1" ]
+do
+	case "$1" in
+		-a) echo "Найдена опция -a";;	
+		-b) echo "Найдена опция -b";;
+		-c) echo "Найдена опция -c";;
+		*) echo "$1 не является опцией";;
+	esac
+	shift
+done
